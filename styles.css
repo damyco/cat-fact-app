@@ -1,0 +1,267 @@
+/* Positioning */
+/* Display & Box Model */
+/* Color */
+/* Text */
+/* Other */
+
+/* base style + reset */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+html {
+  height: 100vh; /* set viewport constraint */
+  min-height: 100%; /* enforce height */
+  font-size: 62.5%;
+}
+
+body {
+  background-image: url(https://images.unsplash.com/photo-1516139008210-96e45dccd83b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ac07676efc2ca5b11b548d8ae01301ba&auto=format&fit=crop&w=1400&q=80);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Indie Flower", cursive;
+  font-size: 2rem; /* 16px */
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
+/* Layout: wrapper, conatiners */
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 40rem;
+  margin: 0 auto;
+
+  border-top: 6px solid #00ace6;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  padding: 3rem;
+}
+
+
+
+.wrapper div.container-main:last-child {
+  padding-bottom: 2em;
+}
+
+.avatar {
+  position: relative;
+  z-index: 5;
+  border-radius: 50%;
+  transform: translate(0, -50%);
+  margin-bottom: -3em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6em;
+  height: 6em;
+  background: #fefefe;
+  border-radius: 50%;
+
+  border: 0.5em solid rgba(0, 0, 0, 0.03);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+}
+
+.footer {
+  padding: 3rem;
+  font-size: 1.2rem;
+}
+
+/* Elements */
+h3 {
+  margin: 1em 0 3em 0;
+}
+
+h5 {
+  margin-bottom: 1rem;
+}
+
+span {
+  font-family: "Quattrocento Sans", sans-serif;
+  font-size: 1.6rem;
+  text-align: justify;
+  animation: fadein 0.5s;
+}
+
+.fa-share-alt,
+.fa-sync-alt {
+  font-size: 3rem;
+  transition: all 0.3s;
+  padding: 1.3rem;
+}
+
+.fa-sync-alt:hover {
+  cursor: pointer;
+  color: #00ace6;
+  transform: rotate(180deg);
+}
+
+.fa-share-alt:hover {
+  cursor: pointer;
+  color: #00ace6;
+}
+
+.fa-paw {
+  cursor: default;
+  font-size: 5.5rem;
+
+  animation: pulsate 1.5s linear infinite;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1.1, 1.1);
+  }
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(1.1, 1.1);
+  }
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7rem;
+  height: 7rem;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 50%;
+  border: 0.7rem solid rgba(0, 0, 0, 0.03);
+  transition: all 0.3s;
+}
+
+.circle:hover {
+  transform: scale(1.1);
+}
+
+/* loading spinner */
+.lds-dual-ring {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.lds-dual-ring:after {
+  display: block;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0.5rem solid #ccc;
+  border-radius: 50%;
+  border-color: #ddd transparent #ddd transparent;
+  content: " ";
+  animation: lds-dual-ring 0.7s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* fade in/out animations */
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Share TOGGLING */
+
+.share-toggle {
+  position: absolute;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 8.5em;
+  margin-left: 3.3em;
+  animation: fadein 0.5s;
+}
+
+/* Share social buttons */
+
+.btn-share {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: solid 0.3em rgba(0, 0, 0, 0.1);
+  color: #fff;
+  transition: background 0.5s;
+}
+
+.btn-share:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.fa {
+  color: #fff;
+  font-size: 10px;
+}
+
+.btn-facebook {
+  background: #43609c;
+}
+
+.btn-twitter {
+  background: #00aced;
+}
+
+.btn-google {
+  background: #d34836;
+}
+
+/* modal */
+
+.modal {
+  position: fixed;
+  z-index: 98;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  animation: fadein 0.5s;
+}
+
+/* class to hide elemets */
+.hidden {
+  display: none;
+}
